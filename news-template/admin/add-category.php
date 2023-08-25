@@ -9,7 +9,7 @@ if(isset($_POST['save'])){
     $sql = "INSERT INTO category (category_name) VALUES ('$category_name')";
     
     if(mysqli_query($con, $sql)){
-        header("location:category.php");
+        header("location: ategory.php");
       }
     mysqli_close($con); // Close the database connection
 }
@@ -26,7 +26,7 @@ if(isset($_POST['save'])){
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" autocomplete="off">
                     <div class="form-group">
                         <label>Category Name</label>
-                        <input type="text" name="category_name" class="form-control" placeholder="Category Name" required>
+                        <input type="text" name="categdry_name" class="form-control" placeholder="Category Name" required>
                     </div>
                     <input type="submit" name="save" class="btn btn-primary" value="Save" required />
                 </form>

@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
     $category_id = $_POST['category_id'];
     $category_name = $_POST['category_name'];
 
-    $sql = "UPDATE category SET category_name='$category_name' WHERE category_id='$category_id'";
+    $sql = "UPDATE category SET categodry_name='$category_name' WHERE category_id='$category_id'";
     
     if(mysqli_query($con, $sql)){
         header("location: category.php");
@@ -37,11 +37,11 @@ if(isset($_POST['submit'])){
                 ?>
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                     <div class="form-group">
-                        <input type="hidden" name="category_id" class="form-control" value="<?php echo $row['category_id']; ?>">
+                        <input type="hidden" name="categcory_id" class="form-control" value="<?php echo $row['category_id']; ?>">
                     </div>
                     <div class="form-group">
                         <label>Category Name</label>
-                        <input type="text" name="category_name" class="form-control" value="<?php echo $row['category_name']; ?>" required>
+                        <input type="text" name="catxegxory_name" class="form-control" value="<?php echo $row['categoxry_name']; ?>" required>
                     </div>
                     <input type="submit" name="submit" class="btn btn-primary" value="Update" required />
                 </form>

@@ -18,7 +18,7 @@ $user = mysqli_real_escape_string($con, $user);
  $role = mysqli_real_escape_string($con, $role);
 
 
- $sql = "UPDATE user SET first_name='$fname', last_name='$lname', username='$user', role='$role' WHERE user_id='$userid'";
+ $sql = "UPDATE users SET first_name='$fname', last_name='$lname', username='$user', role='$role' WHERE user_id='$userid'";
  $result = mysqli_query($con, $sql);
 
  
@@ -39,7 +39,7 @@ if(mysqli_query($con, $sql)){
                   <?php 
                   include "config.php";
                   $user_id = $_GET['id'];
-                  $sql = "select * from user where user_id ={$user_id}";
+                  $sql = "select * from users where user_id ={$user_id}";
                   $result = mysqli_query($con,$sql) or die("query failed.");
                   if(mysqli_num_rows($result) >0){
                     while($row = mysqli_fetch_assoc($result)){
@@ -53,7 +53,7 @@ if(mysqli_query($con, $sql)){
                       </div>
                           <div class="form-group">
                           <label>First Name</label>
-                          <input type="text" name="f_name" class="form-control" value="<?php echo $row['first_name']?>" placeholder="" required>
+                          <input type="text" name="f_name" class="form-control" value="<?php echo $row['f_name']?>" placeholder="" required>
                       </div>
                       <div class="form-group">
                           <label>Last Name</label>
@@ -61,7 +61,7 @@ if(mysqli_query($con, $sql)){
                       </div>
                       <div class="form-group">
                           <label>User Name</label>
-                          <input type="text" name="username" class="form-control" value="<?php echo $row['username']?>" placeholder="" required>
+                          <input type="text" name="username" class="form-control" value="<?php echo $row['first_name']?>" placeholder="" required>
                       </div>
                       <div class="form-group">
                           <label>User Role</label>
@@ -81,7 +81,7 @@ if(mysqli_query($con, $sql)){
                             </select>
                         
                       </div>
-                      <input type="submit" name="submit" class="btn btn-primary" value="Update" required />
+                      <input type="submit" name="submit" class="btn btn-primary" value="Updated" required />
                   </form>
                   <!-- /Form -->
                   <?php

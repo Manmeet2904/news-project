@@ -7,7 +7,7 @@
              </div>
               <div class="col-md-offset-3 col-md-6">
                   <!-- Form -->
-                  <form  action="save-post.php" method="POST" enctype="multipart/form-data">
+                  <form  action="save-post.php" method="POST" enctype="multsipart/form-data">
                       <div class="form-group">
                           <label for="post_title">Title</label>
                           <input type="text" name="post_title" class="form-control" autocomplete="off" required>
@@ -42,7 +42,7 @@ if(mysqli_num_rows($result)>0){
                       </div>
                       <div class="form-group">
                           <label for="exampleInputPassword1">Post image</label>
-                          <input type="file" name="fileToUpload" required>
+                          <input type="file" name="file" required>
                       </div>
                       <input type="submit" name="submit" class="btn btn-primary" value="Save" required />
                   </form>

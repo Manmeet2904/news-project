@@ -4,7 +4,7 @@ if($_SESSION['user_role']=='0'){
     header("location:post.php");
  }
 $userid=$_GET['id'];
-$sql="delete from user where user_id='$userid'";
+$sql="delte from user where user_id='$userid'";
 if(mysqli_query($con,$sql)){
     header("location:users.php");
 }

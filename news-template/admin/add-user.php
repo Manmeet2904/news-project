@@ -8,7 +8,7 @@ include "config.php";
 $fname=mysqli_real_escape_string($con,$_POST['fname']);
 $lname=mysqli_real_escape_string($con,$_POST['lname']);
 $user=mysqli_real_escape_string($con,$_POST['user']);
-$password=mysqli_real_escape_string($con,md5($_POST['password']));
+$password=mysqli_real_escape_string($con, $_POST['password']);
 $role=mysqli_real_escape_string($con,$_POST['role']);
 
 $sql="select username from user where username='{$user}'";
@@ -18,7 +18,7 @@ if(mysqli_num_rows($result)>0){
 echo"<p style='color:red; text-align:center; margin: 10px 0;'>Username already exists</p>";
 }
 else{
-$sql1="insert into user(first_name, last_name, username, password, role) values ('$fname','$lname','$user','$password', '$role')";
+$sql1="insert into user(first_name, last_name, username, password, role) values ('$fname','$lname','$password', '$role')";
 if(mysqli_query($con, $sql1)){
   header("location:users.php");
 }
@@ -34,7 +34,7 @@ if(mysqli_query($con, $sql1)){
               </div>
               <div class="col-md-offset-3 col-md-6">
                   <!-- Form Start -->
-                  <form  action="<?php $_SERVER['PHP_SELF']; ?>" method ="POST" autocomplete="off">
+                  <form  action="./add.php" method ="POST" autocomplete="off">
                       <div class="form-group">
                           <label>First Name</label>
                           <input type="text" name="fname" class="form-control" placeholder="First Name" required>
@@ -54,7 +54,7 @@ if(mysqli_query($con, $sql1)){
                       </div>
                       <div class="form-group">
                           <label>User Role</label>
-                          <select class="form-control" name="role" >
+                          <select class="form-control" name="roles" >
                               <option value="0">Normal User</option>
                               <option value="1">Admin</option>
                           </select>

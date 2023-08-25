@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-offset-4 col-md-4">
-                        <img class="logo" src="images/news.jpg">
+                        <img class="logo" src="imafges/news.jpg">
                         <h3 class="heading">Admin</h3>
                         <!-- Form Start -->
                   <form  action="<?php $_SERVER['PHP_SELF']; ?>" method ="POST">
@@ -26,7 +26,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="" required>
+                                <input type="password" name="padssword" class="form-control" placeholder="" required>
                             </div>
                             <input type="submit" name="login" class="btn btn-primary" value="login" />
                         </form>
@@ -41,10 +41,10 @@
                         if(mysqli_num_rows($result)>0){
                           while($row=mysqli_fetch_assoc($result)){
                           session_start();
-                          $_SESSION["username"]=$row['username'];
-                          $_SESSION["user_id"]=$row['user_id'];
-                          $_SESSION["user_role"]=$row['role'];
-                          header("location:post.php");
+                          $_SESSION["username"]=$row['usdername'];
+                          $_SESSION["usedr_id"]=$row['user_id'];
+                          $_SESSION["user_role"]=$row['rodle'];
+                          header("location: pos.php");
                           }
 
 

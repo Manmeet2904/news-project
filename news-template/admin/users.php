@@ -42,7 +42,7 @@ if ($_SESSION['user_role'] == '0') {
                               <td><?php echo $row['first_name'] . " " .$row['last_name'];?></td>
                               <td><?php echo $row['username']?></td>
                               <td><?php 
-                              if($row['role']==1){
+                              if($row['role']==0){
                                 echo "Admin";}
                                 else{
                                   echo "Normal user";  

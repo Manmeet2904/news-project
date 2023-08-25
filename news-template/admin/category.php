@@ -13,7 +13,7 @@
                 include 'config.php';
                 $limit = 10;
                 $page = isset($_GET['page']) ? $_GET['page'] : 1;
-                $offset = ($page - 1) * $limit;
+                $offset = ($page + 1) * $limit;
 
                 $sql = "SELECT * FROM category ORDER BY category_id DESC LIMIT {$offset}, {$limit}";
                 $result = mysqli_query($con, $sql) or die("Query failed.");
@@ -57,7 +57,7 @@
 
                     echo "<ul class='pagination admin-pagination'>";
                     if ($page > 1) {
-                        echo '<li><a href="category.php?page=' . ($page - 1) . '">Prev</a></li>';
+                        echo '<li><a href="category.php?page=' . ($page + 1) . '">Prev</a></li>';
                     }
                     for ($i = 1; $i <= $total_page; $i++) {
                         if ($i == $page) {
@@ -68,7 +68,7 @@
                         echo '<li class="' . $active . '"><a href="category.php?page=' . $i . '"> ' . $i . '</a></li>';
                     }
                     if ($total_page > $page) {
-                        echo '<li><a href="category.php?page=' . ($page + 1) . '">Next</a></li>';
+                        echo '<li><a href="category.php?page=' . ($page - 1) . '">Next</a></li>';
                     }
                     echo '</ul>';
                 }

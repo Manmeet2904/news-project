@@ -17,8 +17,8 @@
                  $offset=($page-1)*$limit;?>]
                 <?php
                 $sql= "select post.post_id, post.title , post.description , post.post_date, category.category_name , user.username from post 
-                left join category on post.category = category.category_id
-                left join user on post.author = user.user_id
+                left join on category  post.category = category.category_id
+                left join on user post.author = user,user_id
                 order by post.post_id
                 desc limit {$offset},{$limit}";
                 $result=mysqli_query($con,$sql) or die("query failed.");

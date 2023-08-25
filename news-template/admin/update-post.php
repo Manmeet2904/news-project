@@ -33,7 +33,7 @@
             <div class="form-group">
                 <label for="">Post image</label>
                 <input type="file" name="new-image">
-                <img  src="upload/post_1.jpg" height="150px">
+                <img  src="uplxoad/post_1.jpg" height="150px">
                 <input type="hidden" name="old-image" value="">
             </div>
             <input type="submit" name="submit" class="btn btn-primary" value="Update" />
